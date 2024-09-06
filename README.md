@@ -22,11 +22,22 @@ Disable Windows max path length limit. See - <https://learn.microsoft.com/en-us/
 ```
 python ./melo/app.py
 ```
+Or use `~/.local/bin/melo-ui`:
+```
+melo-ui
+```
+
 Then open <http://127.0.0.1:7860/>.
+
 
 ## Run Command Line
 
 ```
 python ./melo/main.py --language 'ZH' --speed 0.9 "你好" output.wav
 python ./melo/main.py --language 'ZH' --speed 0.9 --file test.txt output.wav
+```
+
+Or use  `~/.local/bin/melo`:
+```
+melo --language 'ZH' --speed 0.9 "你好" output.wav
 ```
