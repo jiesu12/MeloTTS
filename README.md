@@ -45,6 +45,9 @@ melo --language 'ZH' --speed 0.9 "你好" output.wav
 ## Training
 
 ```
+mkdir -p ~/tmp/jie
+cp melo/data/example/jie/metadata.list ~/tmp/jie
+# copy *.wav files to ~/tmp/jie
 cd melo
 python ./melo/preprocess_text.py --metadata /home/jie/tmp/jie/metadata.list --config_path /home/jie/project/MeloTTS/melo/configs/config.json
 ```
