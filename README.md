@@ -41,3 +41,26 @@ Or use  `~/.local/bin/melo`:
 ```
 melo --language 'ZH' --speed 0.9 "你好" output.wav
 ```
+
+## Training
+
+```
+cd melo
+python ./melo/preprocess_text.py --metadata /home/jie/tmp/jie/metadata.list --config_path /home/jie/project/MeloTTS/melo/configs/config.json
+```
+A `config.json` will be generated in `/home/jie/tmp/jie/`
+
+```
+bash train.sh /home/jie/tmp/jie/config.json 1
+```
+
+`train.sh` runs a infinite loop, need to Ctrl-C to stop it. For each iteration, a `pth` files is created in `MeloTTS/melo/logs/jie/G_<iteration>000.pth`. The result gets better as more iterations are run.
+
+The time took to finish one training iteration using 20 wav files was about one hour.
+
+### Inference
+
+```
+cd melo
+python infer.py --text "some text here" -m ./logs/jie/G_<iteration>000.pth -o <output_dir>
+```
