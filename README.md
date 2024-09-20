@@ -42,6 +42,11 @@ Or use  `~/.local/bin/melo`:
 melo --language 'ZH' --speed 0.9 "你好" output.wav
 ```
 
+Batch:
+```
+for f in `ls *.txt`;do if ! [[ -f $f.wav ]];then echo $f;melo --language 'ZH' --speed 0.9 --file $f $f.wav;fi;done
+```
+
 ## Training
 
 ```
